@@ -32,12 +32,12 @@ module.exports = {
   },
   plugins: [
     // webpack para empaquetar para produccion, permite trabajar con HTML
-    new HtmlWebpackPlugin([
+    new HtmlWebpackPlugin(
       {
         inject: true, // inyectar a HTML
         template: './public/index.html', // template base HTML
         filename: './index.html', // donde lo vamos a guardar en la carpeta dist instanciada mas arriba
       }
-    ])
+    )
   ]
 }

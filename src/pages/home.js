@@ -9,4 +9,9 @@ const Home = () => {
       </article>
     </div>
   `;
-}
+  return view;
+};
+
+//Permite identificar si se puede usar en otros archivos de JS
+export default Home;
+
