@@ -6,6 +6,8 @@ const path = require('path'); //Nos permite acceder a donde estamos en las carpe
 // archivo necesario para trabajar con html
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // Archivo necesario para trabajar con HTML y crear el archivo para produccion
 
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 // modulo para cada configuracion de
 module.exports = {
   entry: './src/index.js', // donde vive nuestro codigo inicial
@@ -38,6 +40,12 @@ module.exports = {
         template: './public/index.html', // template base HTML
         filename: './index.html', // donde lo vamos a guardar en la carpeta dist instanciada mas arriba
       }
-    )
+    ),
+    new CopyWebpackPlugin({
+      patterns: [{
+        from: './src/styles/styles.css',
+        to: ''
+      }]
+    })
   ]
 }
